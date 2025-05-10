@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Website</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Linking CSS -->
+</head>
+<body>
+    <header>
+        <h1>Welcome to My Portfolio</h1>
+        <button id="menuToggle" class="hamburger">☰</button>
+        <nav id="navMenu">
+            <a href="#about">About Me</a>
+            <a href="#projects">Projects</a>
+            <a href="#skills">Skills</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <section id="about" class="about-me">
+        <h2>About Me</h2>
+        <p>Hello! I'm a web developer passionate about creating beautiful and functional websites.</p>
+    </section>
+
+    <section id="projects" class="projects">
+        <h2>Projects</h2>
+        <div class="filters">
+            <button onclick="filterProjects('all')">All</button>
+            <button onclick="filterProjects('web')">Web Development</button>
+            <button onclick="filterProjects('design')">Design</button>
+        </div>
+        <div class="project-card" data-category="web">
+            <img src="project1.jpg" alt="Project 1" onclick="openLightbox(this.src)">
+            <h3>Web Project 1</h3>
+        </div>
+        <div class="project-card" data-category="design">
+            <img src="project2.jpg" alt="Project 2" onclick="openLightbox(this.src)">
+            <h3>Design Project 1</h3>
+        </div>
+    </section>
+
+    <section id="skills" class="skills">
+        <h2>Skills</h2>
+        <ul>
+            <li class="skill-item">HTML</li>
+            <li class="skill-item">CSS</li>
+            <li class="skill-item">JavaScript</li>
+        </ul>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2>Contact Me</h2>
+        <form id="contactForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <div id="lightbox" class="lightbox">
+        <span onclick="closeLightbox()">×</span>
+        <img id="lightboxImg">
+    </div>
+
+    <script src="script.js"></script> <!-- Linking JavaScript -->
+</body>
+</html>
